@@ -6,6 +6,10 @@
 		SELECT * FROM article order by id desc
 	</select>
 	
+	<select id="getOne" parameterType="long" resultType="Article">
+		SELECT * FROM article where id = #{id}
+	</select>
+	
 	<select id="getTotalCount" parameterType="map" resultType="Int">
 		SELECT count(*) FROM article
 	</select>
