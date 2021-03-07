@@ -48,7 +48,7 @@
 		<div>
 			<span> 내용 </span>
 			<div>
-				<textarea name="body" placeholder="내용"> value="${article.body}"</textarea>
+				<textarea name="body" placeholder="내용">${article.body}</textarea>
 			</div>
 		</div>
 

@@ -57,6 +57,21 @@ public class ArticleController {
 		return "article/add";
 	}
 	
+	@RequestMapping("/article/doModify")
+	@ResponseBody
+	// HttpServletRequest req;
+	public String doModify(@RequestParam Map<String, Object> param, long id) {
+		articleService.modify(param);		
+		String msg = id + "번 게시물이 수정되었습니다.";
+		
+		StringBuilder sb = new StringBuilder();		
+		sb.append("alert('" + msg + "');");
+		sb.append("location.replace('./detail?id=" + id + "');");
+		sb.insert(0, "<script>");
+		sb.append("</script>");
+		return sb.toString();
+	}
+	
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
 	// HttpServletRequest req;
@@ -66,7 +81,7 @@ public class ArticleController {
 		
 		StringBuilder sb = new StringBuilder();		
 		sb.append("alert('" + msg + "');");
-		sb.append("location.replace('./detail?id=" + newId + "');'");
+		sb.append("location.replace('./detail?id=" + newId + "');");
 		sb.insert(0, "<script>");
 		sb.append("</script>");
 		return sb.toString();

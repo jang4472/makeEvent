@@ -26,6 +26,13 @@
 		)		
 	</insert>
 	
+	<update id="modify" parameterType="map">
+		update ARTICLE
+		     set title = #{title},
+		         body = #{body}
+		 where id = #{id}
+	</update>
+	
 	<delete id="delete" parameterType="long">
 		delete from ARTICLE
 		where id = #{id}
