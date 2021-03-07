@@ -33,6 +33,12 @@
 		 where id = #{id}
 	</update>
 	
+	<update id="hitUp" parameterType="long">
+		update ARTICLE
+		     set hit = isnull(hit, 0) + 1
+		 where id = #{id}
+	</update>
+	
 	<delete id="delete" parameterType="long">
 		delete from ARTICLE
 		where id = #{id}
