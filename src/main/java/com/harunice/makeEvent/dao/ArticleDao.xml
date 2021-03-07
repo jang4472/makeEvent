@@ -23,7 +23,11 @@
 			CURRENT_TIMESTAMP, 
 			#{title}, 
 			#{body}
-		)
-		
+		)		
 	</insert>
+	
+	<delete id="delete" parameterType="long">
+		delete from ARTICLE
+		where id = #{id}
+	</delete>
 </mapper>

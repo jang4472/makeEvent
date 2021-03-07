@@ -62,4 +62,19 @@ public class ArticleController {
 		sb.append("</script>");
 		return sb.toString();
 	}
+	
+	@RequestMapping("/article/doDelete")
+	@ResponseBody
+	// HttpServletRequest req;
+	public String doDelete(long id) {
+		articleService.delete(id);		
+		String msg = id + "번 게시물이 삭제되었습니다.";
+		
+		StringBuilder sb = new StringBuilder();		
+		sb.append("alert('" + msg + "');");
+		sb.append("location.replace('./list');");
+		sb.insert(0, "<script>");
+		sb.append("</script>");
+		return sb.toString();
+	}
 }
