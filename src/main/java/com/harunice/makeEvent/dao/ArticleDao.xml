@@ -6,6 +6,10 @@
 		SELECT * FROM article order by id desc
 	</select>
 	
+	<select id="getTotalCount" parameterType="map" resultType="Int">
+		SELECT count(*) FROM article
+	</select>
+	
 	<insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="map">
 		INSERT INTO ARTICLE (
 			regDate, 
