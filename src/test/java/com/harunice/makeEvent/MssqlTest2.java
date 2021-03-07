@@ -18,7 +18,7 @@ class MssqlTest2 {
 	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static final String URL = "jdbc:sqlserver://114.204.170.93:3726;databaseName=event_DB";
     private static final String USER = "sa"; //DB 사용자명
-    private static final String PW = "!han284472";   //DB 사용자 비밀번호
+    private static final String PW = "event111";   //DB 사용자 비밀번호
 
     @Test
     public void testConnection() throws Exception{
