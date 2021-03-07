@@ -1,5 +1,6 @@
 package com.harunice.makeEvent.service;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ public class ArticleServiceImpl implements ArticleService {
 	public long add(Map<String, Object> param) {
 		articleDao.add(param);
 		
-		BigInteger bigIntId = (BigInteger)param.get("id");
+		BigDecimal bigIntId = (BigDecimal)param.get("id");
 		long newId = bigIntId.longValue();
 		
 		return newId;
