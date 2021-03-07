@@ -41,7 +41,7 @@ public class ArticleController {
 	@ResponseBody
 	// HttpServletRequest req;
 	public String doAdd(@RequestParam Map<String, Object> param) {
-		articleService.add(param);		
-		return "게시물이 추가되었습니다.";
+		long newId = articleService.add(param);		
+		return newId + "번 게시물이 추가되었습니다.";
 	}
 }
