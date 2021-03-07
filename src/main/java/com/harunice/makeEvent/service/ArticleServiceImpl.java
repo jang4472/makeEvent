@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.harunice.makeEvent.controller.ArticleController;
 import com.harunice.makeEvent.dao.ArticleDao;
 import com.harunice.makeEvent.dto.Article;
+import com.harunice.makeEvent.util.CUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,9 +31,6 @@ public class ArticleServiceImpl implements ArticleService {
 	public long add(Map<String, Object> param) {
 		articleDao.add(param);
 		
-		BigDecimal bigIntId = (BigDecimal)param.get("id");
-		long newId = bigIntId.longValue();
-		
-		return newId;
+		return CUtil.getAsLong(param.get("id"));
 	}	
 }
